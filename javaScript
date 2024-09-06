@@ -1,0 +1,49 @@
+// Product data to be displayed on the website
+const products = [
+    {
+        name: 'Wireless Headphones',
+        price: '$50',
+        image: 'https://via.placeholder.com/200x150',
+    },
+    {
+        name: 'Smart Watch',
+        price: '$80',
+        image: 'https://via.placeholder.com/200x150',
+    },
+    {
+        name: 'Bluetooth Speaker',
+        price: '$30',
+        image: 'https://via.placeholder.com/200x150',
+    },
+    {
+        name: 'Gaming Mouse',
+        price: '$25',
+        image: 'https://via.placeholder.com/200x150',
+    },
+];
+
+// Inject products into the HTML
+const productList = document.getElementById('product-list');
+
+products.forEach(product => {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product');
+    
+    productElement.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h2>${product.name}</h2>
+        <p>Price: ${product.price}</p>
+    `;
+    
+    productList.appendChild(productElement);
+});
+
+// Basic login function (dummy login for demonstration)
+function login() {
+    const username = prompt("Enter username:");
+    if(username) {
+        alert("Welcome, " + username + "!");
+    } else {
+        alert("Login failed. Please try again.");
+    }
+}
